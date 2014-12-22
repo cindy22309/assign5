@@ -38,7 +38,7 @@ myBrick[n].hit=0 ;
 void draw(){
  // frameRate(20);
   background(0);
-  life();
+  llife();
 
    switch(status) {
 
@@ -49,7 +49,7 @@ void draw(){
   myBar.display();
   cheakBrick();
    Begin();
-  life();
+  llife();
  
     /*--------------------------------*/
     break;
@@ -101,7 +101,7 @@ if (mousePressed && (mouseButton == RIGHT)){
 
 }
 }
-void life(){
+void llife(){
     textAlign(CENTER);
     textSize(20);
     text("LIFE",50,450);

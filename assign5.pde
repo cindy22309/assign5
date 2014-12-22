@@ -1,4 +1,3 @@
-
 Bar myBar;
 Ball myBall;
 Brick [] myBrick;
@@ -163,7 +162,7 @@ void cheakBrick(){
       myBrick[n].display();
   }
   
-      if(myBall.isHit(myBall.x , myBall.y , myBall.size , myBrick[n].bX , myBrick[n].bY , myBrick[n].bSize , myBrick[n].bSize) == true){
+      if(myBall.isHit(myBall.x , myBall.y , myBall.ssiz , myBrick[n].bX , myBrick[n].bY , myBrick[n].bssiz , myBrick[n].bssiz) == true){
       myBrick[n].hit = 1 ;
      // checkcheck();
      // checkk();

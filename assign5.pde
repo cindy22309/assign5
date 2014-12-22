@@ -148,7 +148,7 @@ void boom(){
      tmp++;
    }
   }
-  println(tmp);
+ 
   if(tmp==24){
      status=GAME_WIN;
   }

@@ -171,15 +171,3 @@ void cheakBrick(){
    }
  }
 
-void checkcheck(){
-// frameRate(20);
- println(disappear);
-  if(myBrick[n].hit == 1){
-     disappear+=1;
-       } 
-}
-void checkk(){if(disappear==24){
-   
-        status=GAME_WIN;
-    }
-}

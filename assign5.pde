@@ -15,9 +15,10 @@ final int GAME_PLAYING = 1;
 final int GAME_LOSE = 2;
 final int GAME_WIN = 3;
 final int CHEAK_WIN=4;
+final int VERY_START=5;
 void setup(){
   size(640,480); 
-  
+  status =VERY_START;
    myBar = new Bar();
    myBall = new Ball();
 
@@ -74,25 +75,21 @@ void draw(){
    textAlign(CENTER);
     textSize(60);
     text("GAMELOSE",320,240);
-    if (key == ENTER){
-      
-      reset();
-      
-    }
+    
    
    break;
    
    case GAME_WIN:
     textAlign(CENTER);
     textSize(60);
-    text("GAMEWIN",320,240);
-    if (key == ENTER){
-      
-      reset();
-      
-    }
+    text("GAMEWIN",320,300);
+    
+  case VERY_START:
+    textAlign(CENTER);
+    textSize(60);
+    text("PONG",320,240);
+    
     break;
- 
 }
 }
 void Begin() {
@@ -137,7 +134,7 @@ void reset(){
     y=50+50*(int)(n/12);
    myBrick[n]= new Brick(x,y);
  myBrick[n].hit=0 ;}
-   status=GAME_START;
+   
 }
 
 
@@ -148,7 +145,7 @@ void boom(){
      tmp++;
    }
   }
- 
+  println(tmp);
   if(tmp==24){
      status=GAME_WIN;
   }
@@ -170,3 +167,25 @@ void cheakBrick(){
    }
  }
 
+void keyPressed() {
+  if (key == ENTER) {
+    switch(status) {
+
+    case VERY_START:
+   status = GAME_START;
+     break;
+ 
+      /*-----------add things here--------*/
+  case GAME_WIN:
+      status = GAME_START;
+      reset();
+      break;
+   case GAME_LOSE:
+      status = GAME_START;
+      reset();
+      break;
+    
+  
+}
+  }
+}

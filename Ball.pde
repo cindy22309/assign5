@@ -3,7 +3,7 @@ class Ball{
   float y;
   float xSpeed;
   float ySpeed;
-  float size;
+  float ssiz;
   int life=3;
   float xx;
   float yy;
@@ -11,14 +11,14 @@ class Ball{
     x+=xSpeed;
     y+=ySpeed;
     life=3;
-    if (x<size/2 || x>width-size/2){
+    if (x<ssiz/2 || x>width-ssiz/2){
       xSpeed *= -1;
     }
-    if (y<size/2){
+    if (y<ssiz/2){
       ySpeed *= -1;
     }
    
-    float bottom = y+size/2;
+    float bottom = y+ssiz/2;
     float bl = myBar.y - 10/2;
     float bLeft = myBar.x-myBar.length/2;
     float bRight = myBar.x+myBar.length/2;
@@ -33,19 +33,19 @@ class Ball{
 if (mouseX<60){
   x=60;
   y=height-60;
-  ellipse(x,y,size,size);
+  ellipse(x,y,ssiz,ssiz);
   }else if(mouseX>580){
     x=580;
   y=height-60;
-  ellipse(x,y,size,size);
+  ellipse(x,y,ssiz,ssiz);
   }else{
   x=mouseX;
   y=height-60;
-  ellipse(x,y,size,size);}
+  ellipse(x,y,ssiz,ssiz);}
   }
  
   void display(){
-    ellipse(x,y,size,size);
+    ellipse(x,y,ssiz,ssiz);
     fill(255,255,255);
   }
   
@@ -78,14 +78,14 @@ if (mouseX<60){
     y = 10;
     xSpeed = 5+xx;
     ySpeed = 10+yy;
-    size = 10;
+    ssiz = 10;
   }
   
-  Ball(float size, float xSpeed){
+  Ball(float ssiz, float xSpeed){
     x = 10;
     y = 10;
     this.xSpeed = xSpeed;
-    this.ySpeed = size;
-    this.size = size;
+    this.ySpeed = ssiz;
+    this.ssiz = ssiz;
   }
 }
